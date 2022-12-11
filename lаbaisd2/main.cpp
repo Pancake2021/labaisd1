@@ -1,6 +1,13 @@
 #include <iostream>
 #include "header.hpp"
 #include <cmath>
+#include <complex>
+
+
+
+
+
+
 
 void GetValue(int& value)
 {
@@ -64,6 +71,7 @@ void GetValueFromUserInRange(int& value, const float& left_border, const float& 
         }
     }
 }
+
 void MenuWorkingWithVector(Vector& vector)
 {
     bool working_with_vector = true;
@@ -342,6 +350,3 @@ void Menu(float)
         Menu((float)0.0);
         return 0;
     }
-
-
-
