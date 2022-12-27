@@ -38,7 +38,7 @@ void GetValueFromUserInRange(T& value, const T& left_border, const T& right_bord
         }
         else
         {
-            std::cout << "The value is not in range, try again" << std::endl;
+            std::cout << "Значение не находится в диапазоне, повторите попытку" << std::endl;
         }
     }
 }
@@ -66,18 +66,18 @@ void MenuWorkingWithVector(Vector<Type_Vectors>& vector)
                 if (vector.GetSize())
                 {
                     try {
-                        std::cout << "Enter a index of element to edit" << std::endl;
+                        std::cout << "Введите индекс элемента для редактирования" << std::endl;
                         int index = 0;
                         std::cin>>index;
                     
-                        std::cout << "Enter a new value for the element" << std::endl;
+                        std::cout << "Введите новое значение для элемента" << std::endl;
                         Type_Vectors value = 0;
                         std::cin>>value;
                         vector[index] = value;
                     }
                     catch (std::out_of_range& ex)
                     {
-                        std::cout << ex.what() << " Try again" << std::endl;
+                        std::cout << ex.what() << " Пробуйте снова" << std::endl;
                         
                     }
                 }
@@ -86,14 +86,14 @@ void MenuWorkingWithVector(Vector<Type_Vectors>& vector)
             case (1):
             {
                 Type_Vectors number;
-                std::cout<<"Enter the element: ";
+                std::cout<<"Введите элемент: ";
                 std::cin>>number;
                 vector.PushBack(number);
                 break;
             }
             case (2):
             {
-                std::cout << "Enter a scalar" << std::endl;
+                std::cout << "Введите скаляр" << std::endl;
                 int scalar = 0;
                 std::cin>>scalar;
                 try
@@ -102,14 +102,14 @@ void MenuWorkingWithVector(Vector<Type_Vectors>& vector)
                 }
                 catch (const char* ex)
                 {
-                    std::cout << ex << " Try again" << std::endl;
+                    std::cout << ex << " Пробуйте снова" << std::endl;
                     
                 }
                 break;
             }
             case (3):
             {
-                std::cout << "Enter a scalar" << std::endl;
+                std::cout << "Введите скаляр" << std::endl;
                 int scalar = 0;
                 std::cin>>scalar;
                 vector *= scalar;
@@ -123,7 +123,7 @@ void MenuWorkingWithVector(Vector<Type_Vectors>& vector)
                 if (vector.GetSize())
                 {
                     
-                    std::cout << "Enter the index of element to delete" << std::endl;
+                    std::cout << "Введите индекс элемента для удаления" << std::endl;
                     int index = 0;
                     std::cin>>index;
                     try
@@ -132,75 +132,31 @@ void MenuWorkingWithVector(Vector<Type_Vectors>& vector)
                     }
                     catch (std::out_of_range& ex)
                     {
-                        std::cout << ex.what() << " Try again" << std::endl;
+                        std::cout << ex.what() << " Пробуйте снова" << std::endl;
                         
                     }
                 }
                 else
                 {
-                    std::cout << "There are no elements to delete" << std::endl;
+                    std::cout << "Введите индекс элемента для удаления" << std::endl;
                 }
                     
                 break;
             }
             
-                /*
-                Vector<Type_Vectors> vector2;
-                Type_Vectors intermediate_result;
-                Type_Vectors result_1;
-                if (typeid(intermediate_result) != typeid(int)) {
-                    for (int i = 0; i<vector.GetSize(); i++) {
-                        vector2.PushBack(1);
-                    }
-                    
-                    for (int i = 0; i<vector.GetSize(); i++) {
-                        
-                        //intermediate_result = -(vector.operator[](i) * vector2.operator[](i));
-                        intermediate_result = -(vector[i] * vector2[i]);
-                        result_1 = intermediate_result / vector.operator[](0);
-                    }
-                    
-                    vector2.Insert(result_1, 0);
-                    vector2.Erase(vector2.GetSize()-1);
-                    
-                    Type_Vectors sqr;
-                    for (int i = 0; i<vector2.GetSize(); i++) {
-                        float inc;
-                        //inc += vector2.operator[](i)*vector2.operator[](i);
-                        inc += vector2[i]*vector2[i];
-                        sqr = sqrt(inc);
-                        
-                    }
-                    Vector<Type_Vectors> vector3;
-                    for (int i = 0; i<vector2.GetSize(); i++) {
-                        //vector3.PushBack(vector2.operator[](i)/sqr);
-                        vector3.PushBack(vector2[i]/sqr);
-                    }
-                    std::cout<<"Perpendicular vector: ";
-                    std::cout<<vector3<<std::endl;
-                    std::cout<<"\n\n\n";
-                    
-                }
-                else{
-                    std::cout<<"the perpendicular is not calculated"<<std::endl;
-                }
                 
-                break;
-                 */
-            
-           
             case (5):
             {
                 try {
-                    std::cout<<"Enter the element: ";
+                    std::cout<<"Введите элемент: ";
                     Type_Vectors InsertNumber;
                     std::cin>>InsertNumber;
-                    std::cout<<"Enter the index: ";
+                    std::cout<<"Введите индекс: ";
                     int InsertIndex;
                     std::cin>>InsertIndex;
                     vector.Insert(InsertNumber, InsertIndex);
                 } catch (std::out_of_range& ex) {
-                    std::cout << ex.what() << " Try again" << std::endl;
+                    std::cout << ex.what() << " Пробуйте снова" << std::endl;
                 }
                 break;
                 
@@ -209,14 +165,13 @@ void MenuWorkingWithVector(Vector<Type_Vectors>& vector)
             case (6):
             {
                 try {
-                    std::cout<<"Enter the index: ";
+                    std::cout<<"Введите индекс: ";
                     int index;
                     std::cin>>index;
-                    //std::cout<<vector.operator[](index)]<<std::endl;
                     std::cout<<vector[index]<<std::endl;
                     
                 } catch (std::out_of_range& ex) {
-                    std::cout << ex.what() << " Try again" << std::endl;
+                    std::cout << ex.what() << " Пробуйте сноваn" << std::endl;
                 }
                 break;
             }
@@ -353,8 +308,6 @@ void MenuWorkingWithVector(Vector<std::complex<Type_Vectors>>& vector)
                     std::cout<<"Enter the index: ";
                     int index;
                     std::cin>>index;
-                   
-                    //std::cout<<vector.operator[](index)<<std::endl;
                     std::cout<<vector[index]<<std::endl;
                     
                 } catch (std::out_of_range& ex) {
@@ -380,15 +333,15 @@ void Menu(Type_Vectors)
     Vector<Type_Vectors> second_vector;
     while (function_is_working)
     {
-        std::cout << "First vector:" << first_vector << std::endl;
-        std::cout << "\nSecond vector:" << second_vector << std::endl;
-        std::cout << "Enter:\n0 - для работы и редактирования с одним вектором" << std::endl;
-        std::cout << "1 - для суммирования двух векторов\n2 -чтобы вычесть второй вектор из первого" << std::endl;
-        std::cout << "3 - для вычисления скалярного произведения двух векторов\n "<< std::endl;
-        std::cout << "4 - Вчислить площадь между двумя векторами\n" << std::endl;
-        std::cout << "5 - очистите два вектора" << std::endl;
-        std::cout << "6 - Выведите, равны ли два вектора или нет\n7 - сделайте первый вектор равным второму\n";
-        std::cout << "8 - закончите работу с векторами" << std::endl;
+        std::cout << "Первый вектор:" << first_vector << std::endl;
+        std::cout << "\nВторой вектор:" << second_vector << std::endl;
+        std::cout << "Ввидите:\n0 - Для работы и редактирования с одним вектором" << std::endl;
+        std::cout << "1 - Для суммирования двух векторов\n2 - Чтобы вычесть второй вектор из первого" << std::endl;
+        std::cout << "3 - Для вычисления скалярного произведения двух векторов "<< std::endl;
+        std::cout << "4 - Вчислить площадь между двумя векторами" << std::endl;
+        std::cout << "5 - Очистите два вектора" << std::endl;
+        std::cout << "6 - Выведите, равны ли два вектора или нет\n7 - Сделайте первый вектор равным второму\n";
+        std::cout << "8 - Закончите работу с векторами" << std::endl;
         int action = 0;
         GetValueFromUserInRange(action, (int)0, (int)8, "\nВвеберете нужный вам пункт");
         switch (action)
@@ -396,7 +349,7 @@ void Menu(Type_Vectors)
         case (0):
         {
             int order_number = 0;
-            GetValueFromUserInRange(order_number, (int)1, (int)2, "Enter the order number of vector you wanted to edit");
+            GetValueFromUserInRange(order_number, (int)1, (int)2, "Введите номер заказа вектора, который вы хотели отредактировать");
             
             if (order_number == 1)
             {
@@ -441,6 +394,7 @@ void Menu(Type_Vectors)
             try
             {
                 Type_Vectors scalar_product = first_vector.DotProduct(second_vector);
+                //Type_Vectors scalar_product = first_vector.multiple(second_vector);
                 std::cout << scalar_product << std::endl;
             }
             catch (const char* ex)
@@ -452,22 +406,9 @@ void Menu(Type_Vectors)
         }
             case (4):
             {
-                Type_Vectors scalar_product = first_vector.DotProduct(second_vector);
-                std::cout << "scalar" << " " <<scalar_product << std::endl;
-                                
-                Type_Vectors kvad1 = first_vector.duct(first_vector);
-                                
-                std::cout << "the first squares" <<  " " <<kvad1 << std::endl;
-                Type_Vectors kvad2 = second_vector.duct(second_vector);
-                                
-                std::cout << "second squares" << " " << kvad2 << std::endl;
-                Type_Vectors krvad = (scalar_product)/((sqrt(kvad1) * sqrt(kvad2)));
-                std::cout << "cosine" <<  " " <<krvad << std::endl;
-                Type_Vectors sin = sqrt (1 - (krvad*krvad));
-                                
-                std::cout << "sin"  << " " << sin << std::endl;
-                Type_Vectors s = 0.5 * sin * sqrt(kvad1) * sqrt(kvad2);
-                std::cout << "Square" << s << std::endl;
+                std::cout << "Плошадь" << square(first_vector, second_vector) << std::endl;
+                
+                
                 break;
             }
         case (5):
@@ -507,15 +448,15 @@ void Menu(std::complex<Type_Vectors>)
     Vector<std::complex<Type_Vectors>> second_vector;
     while (function_is_working)
     {
-        std::cout << "First vector:" << first_vector << std::endl;
-        std::cout << "\nSecond vector:" << second_vector << std::endl;
-        std::cout << "Enter:\n0 - для работы и редактирования с одним вектором" << std::endl;
-        std::cout << "1 - для суммирования двух векторов\n2 -чтобы вычесть второй вектор из первого" << std::endl;
-        std::cout << "3 - для вычисления скалярного произведения двух векторов\n "<< std::endl;
-        std::cout << "4 - Вчислить площадь между двумя векторами\n" << std::endl;
-        std::cout << "5 - очистите два вектора" << std::endl;
-        std::cout << "6 - Выведите, равны ли два вектора или нет\n7 - сделайте первый вектор равным второму\n";
-        std::cout << "8 - закончите работу с векторами" << std::endl;
+        std::cout << "Первый вектор:" << first_vector << std::endl;
+        std::cout << "\nВторой вектор:" << second_vector << std::endl;
+        std::cout << "Ввидите:\n0 - Для работы и редактирования с одним вектором" << std::endl;
+        std::cout << "1 - Для суммирования двух векторов\n2 - Чтобы вычесть второй вектор из первого" << std::endl;
+        std::cout << "3 - Для вычисления скалярного произведения двух векторов "<< std::endl;
+        std::cout << "4 - Вчислить площадь между двумя векторами" << std::endl;
+        std::cout << "5 - Очистите два вектора" << std::endl;
+        std::cout << "6 - Выведите, равны ли два вектора или нет\n7 - Сделайте первый вектор равным второму\n";
+        std::cout << "8 - Закончите работу с векторами" << std::endl;
         int action = 0;
         GetValueFromUserInRange(action, (int)0, (int)8, "\nВвеберете нужный вам пункт");
         switch (action)
@@ -579,53 +520,7 @@ void Menu(std::complex<Type_Vectors>)
         }
         case 4:
             {
-                
-                std::complex<Type_Vectors> scalar_product((Type_Vectors)0, (Type_Vectors)0);
-                std::complex<Type_Vectors> kvad1((Type_Vectors)0, (Type_Vectors)0);
-                std::complex<Type_Vectors> kvad2((Type_Vectors)0, (Type_Vectors)0);
-                std::complex<Type_Vectors> prom((Type_Vectors)0, (Type_Vectors)0);
-                std::complex<Type_Vectors> prom2((Type_Vectors)0, (Type_Vectors)0);
-                std::complex<Type_Vectors> sin((Type_Vectors)0);
-                
-                std::complex<Type_Vectors> s((Type_Vectors)0, (Type_Vectors)0);
-                std::complex<Type_Vectors> promres((Type_Vectors)0, (Type_Vectors)0);
-                
-                scalar_product = first_vector.DotProduct(second_vector);
-                std::cout << "скалярное" << scalar_product << std::endl;
-                
-                
-                kvad1 = first_vector.DotProduct(first_vector);
-                                
-                std::cout << "the first squares" <<  " " <<kvad1 << std::endl;
-                kvad2 = second_vector.DotProduct(second_vector);
-                
-                prom = (scalar_product)/((sqrt(kvad1) * sqrt(kvad2)));
-                prom2 = prom;
-                
-                promres = (prom.real()*prom2.real() - prom.imag()*prom2.imag()) + (prom.real()*prom2.imag() - prom.imag()*prom2.real());
-                //std::cout<<promres << std::endl;
-                double cos_alfa = multiple(first_vector,second_vector) / (first_vector.GetSize() * second_vector.GetSize());
-                double sin_alfa = std::sqrt(1 - std::pow(cos_alfa, 2));
-                //sin = std::sqrt (1 - (promres.real()));
-                std::cout << "синус" << sin_alfa<< std::endl;
-                std::cout << "cos" << cos_alfa<< std::endl;
-                
-                double square = first_vector.GetSize() * second_vector.GetSize() * sin_alfa / 2;
-                
-                std::cout << "S" << square<< std::endl;
-                                
-              //  std::cout << "sin"  << " " << sin << std::endl;
-                //s = 0.5 * sin.real() * sqrt(kvad1) * sqrt(kvad2);
-                //std::cout << "Square" << s << std::endl;
-                
-//                std::complex  <double> kvad2 = second_vector.DotProduct(second_vector);
-//
-//                std::complex  <double> prom = (scalar_product)/((sqrt(kvad1) * sqrt(kvad2)));
-//                std::cout << "пром" << prom << std::endl;
-//
-//                std::cout << "пром"  << std::endl;
-//                std::cout << "пром"  << std::endl;
-//
+                std::cout << "Плошадь:" << square(first_vector, second_vector) << std::endl;
                 break;
         }
         case 5:
@@ -667,7 +562,7 @@ int main()
     {
         std::cout << "Enter:\n0 - to work <int>" << std::endl;
         std::cout << "1 - to work <float>" << std::endl;
-        std::cout << "2 - to work r<double>" << std::endl;
+        std::cout << "2 - to work <double>" << std::endl;
         std::cout << "3 - to work <std::complex<float>>" << std::endl;
         std::cout << "4 - to work <std::complex<double>>" << std::endl;
         std::cout << "5 - to finish working with program" << std::endl;
